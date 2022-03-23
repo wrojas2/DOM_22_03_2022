@@ -1,17 +1,38 @@
-let h1 =document.createElement("H1");
-let texto = document.createTextNode("WILLIAM ROJAS ROJAS - 91490218");
+let enviar = async function(url){
+    let peticion = await fetch(url);
+    let json = await peticion.json();
+    let selecion = document.querySelector("body > table > tbody");
 
-h1.id = "Myid";
-h1.classList.add("colorH1");
-// h1.append(texto)                 // Javascript  version 1
-// h1.innerText = texto.nodeValue; // javascript  version 2
+    let tr = document.createElement("TR");
 
-h1.insertAdjacentText("beforeend", texto.nodeValue); //  
+    let tdId = document.createElement("TD");
+    tdId.insertAdjacentText("beforeend", json.id);
+    let tdNom = document.createElement("TD");
+    tdNom.insertAdjacentText("beforeend", json.name);
 
-//document.body.append(h1); // javascript versión 1
-// document.body.innerHTML = h1.outerHTML // javascrip  version 2
-document.body.insertAdjacentElement("afterbegin", h1);
+    let tdImg= document.createElement("TD");
+    let Img= document.createElement("IMG");
+    Img.src = json.sprites.front_default;
+    tdImg.insertAdjacentElement("beforeend", Img);
 
-console.log(h1);
-console.dir(h1);
+    tr.insertAdjacentElement("beforeend", tdId);
+    tr.insertAdjacentElement("beforeend", tdNom);
 
+
+    // puntos de ataque
+    ataque:
+    for(let value of json.stats){
+        if(value.stat.name == "attack"){
+            let tdAta = document.createElement("TD");
+            tdAta.insertAdjacentText("beforeend", value.base_stat);
+            tr.insertAdjacentElement("beforeend", tdAta);
+            break ataque;
+        }
+    }
+    tr.insertAdjacentElement("beforeend", tdImg);
+    selecion.insertAdjacentElement("beforeend", tr);
+}
+
+for (let i = 1; i < 100; i++) {
+    enviar(`https://pokeapi.co/api/v2/pokemon/${i}`);
+}
