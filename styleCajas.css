@@ -4,7 +4,7 @@
     font-family: 'Roboto', sans-serif !important;
 }
 
-/* .container div:nth-child(3){
+.container div:nth-child(3){
     margin: auto;
     top: 0;
     left: 0;
@@ -15,4 +15,4 @@
     color: blueviolet;  
     font-weight: 800;    
     background: #2be286;    
-} */
+}
