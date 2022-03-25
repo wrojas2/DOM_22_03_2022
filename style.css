@@ -1,21 +1,32 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('styleCajas.css');
+
 :root{
     --color1: red;
-    --color2: #fff;
+    --color2: #a5a5a5;
+    --tamañoCaja: 550px;
+    --tamañoCajaHija: 120px;
 }
-ul li {
-    list-style: none;
-    color: var(--color2);
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    padding: 15px;
+.container{
+    position: relative;
+    margin: 0 auto;
+    top: 100px;
     background: var(--color1);
-    display: inline-block;
-    border-radius: 15px;
-    margin: 10px;
+    width: var(--tamañoCaja);
+    height: var(--tamañoCaja);
 }
-ul li:hover{
-    opacity: .8;
-    cursor: pointer;
+.container div{
+    position: absolute;
+    width: var(--tamañoCajaHija);
+    height: var(--tamañoCajaHija);
+    background: var(--color2);
+    text-align: center;
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container div:nth-child(2){
+    top: 0;
+    right: 0;
 }

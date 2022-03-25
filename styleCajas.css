@@ -1,0 +1,18 @@
+.Mystyle{
+    background: orange !important;
+    color: #fff !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+/* .container div:nth-child(3){
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: 'Inspiration', cursive;
+    font-size: 35px;
+    color: blueviolet;  
+    font-weight: 800;    
+    background: #2be286;    
+} */

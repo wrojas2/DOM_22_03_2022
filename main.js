@@ -1,24 +1,34 @@
 
-let selecionElento = document.querySelector("body > ul > li:nth-child(3)");
-// console.log("1",selecionElento);
+// let Mystyle = {
+//     background: "green",
+//     color : "#fff",
+//     "font-family":"'Roboto', sans-serif",
+// };
 
-let selecionAtributos = document.querySelector("#Mylista > li:nth-child(3)");
-// console.log("2", selecionAtributos);
+// let divConteiner = document.querySelector(".container > div:nth-child(2)");
+// Object.assign(divConteiner.style, Mystyle);
+// divConteiner.classList.add('Mystyle');
 
-let numero = 14;
-let selecionDataset = document.querySelectorAll("#Mylista > li");
-selecionDataset.forEach(element => {
-    if(element.dataset.cc != undefined){
-        if(element.dataset.cc.includes(numero) && numero != 0){
-            console.log("3", element);
-            //alert("3", element);
-        }else if(numero==0){
-            console.log("3", element);
-        }
-        // let resultado = (element.dataset.cc.includes(numero) && numero != 0) 
-        //     ? ["3", element]
-        //     :((numero==0) ? ["3", element] : "")
-        // console.log(...resultado);
-    }
-});
-// console.log(selecionDataset);
+// let Mystyle3 = {
+//     margin: "auto",
+//     top: 0,
+//     left: 0,
+//     right: 0,
+//     bottom: 0,
+//     "font-family": "'Inspiration', cursive",
+//     "font-size": "35px",
+//     color: "blueviolet",
+//     "font-weight": 800,
+//     background: "#2be286"
+// }  // Insertando estilos desde JS
+
+let div = document.querySelector(".container");
+let divCaja2 = document.querySelector(".container > div:nth-child(2)");
+divCaja2.classList.add('Mystyle');
+
+let divCaja3 = document.createElement("DIV");
+divCaja3.insertAdjacentText("beforeend", "Caja 3");
+div.insertAdjacentElement("beforeend", divCaja3);
+// Object.assign(divCaja3.style, Mystyle3);  // Se utiliza cuando se inserta el estilo desde el JS
+
+
