@@ -1,38 +1,24 @@
-let enviar = async function(url){
-    let peticion = await fetch(url);
-    let json = await peticion.json();
-    let selecion = document.querySelector("body > table > tbody");
 
-    let tr = document.createElement("TR");
+let selecionElento = document.querySelector("body > ul > li:nth-child(3)");
+// console.log("1",selecionElento);
 
-    let tdId = document.createElement("TD");
-    tdId.insertAdjacentText("beforeend", json.id);
-    let tdNom = document.createElement("TD");
-    tdNom.insertAdjacentText("beforeend", json.name);
+let selecionAtributos = document.querySelector("#Mylista > li:nth-child(3)");
+// console.log("2", selecionAtributos);
 
-    let tdImg= document.createElement("TD");
-    let Img= document.createElement("IMG");
-    Img.src = json.sprites.front_default;
-    tdImg.insertAdjacentElement("beforeend", Img);
-
-    tr.insertAdjacentElement("beforeend", tdId);
-    tr.insertAdjacentElement("beforeend", tdNom);
-
-
-    // puntos de ataque
-    ataque:
-    for(let value of json.stats){
-        if(value.stat.name == "attack"){
-            let tdAta = document.createElement("TD");
-            tdAta.insertAdjacentText("beforeend", value.base_stat);
-            tr.insertAdjacentElement("beforeend", tdAta);
-            break ataque;
+let numero = 14;
+let selecionDataset = document.querySelectorAll("#Mylista > li");
+selecionDataset.forEach(element => {
+    if(element.dataset.cc != undefined){
+        if(element.dataset.cc.includes(numero) && numero != 0){
+            console.log("3", element);
+            //alert("3", element);
+        }else if(numero==0){
+            console.log("3", element);
         }
+        // let resultado = (element.dataset.cc.includes(numero) && numero != 0) 
+        //     ? ["3", element]
+        //     :((numero==0) ? ["3", element] : "")
+        // console.log(...resultado);
     }
-    tr.insertAdjacentElement("beforeend", tdImg);
-    selecion.insertAdjacentElement("beforeend", tr);
-}
-
-for (let i = 1; i < 100; i++) {
-    enviar(`https://pokeapi.co/api/v2/pokemon/${i}`);
-}
+});
+// console.log(selecionDataset);

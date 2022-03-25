@@ -1,15 +1,21 @@
-td, th{
-    border: 1px solid red;
+
+:root{
+    --color1: red;
+    --color2: #fff;
 }
-td{
-    text-align: center;
+ul li {
+    list-style: none;
+    color: var(--color2);
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    padding: 15px;
+    background: var(--color1);
+    display: inline-block;
+    border-radius: 15px;
+    margin: 10px;
 }
-caption{
-    font-size: 2em;
-}
-th{
-    font-size: 1.5em;
-}
-table{
-    width: 100%;
+ul li:hover{
+    opacity: .8;
+    cursor: pointer;
 }
