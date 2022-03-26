@@ -31,4 +31,6 @@ divCaja3.insertAdjacentText("beforeend", "Caja 3");
 div.insertAdjacentElement("beforeend", divCaja3);
 // Object.assign(divCaja3.style, Mystyle3);  // Se utiliza cuando se inserta el estilo desde el JS
 
+let divCajas = `<div>Caja 4</div><div>Caja 5</div>`;
+div.insertAdjacentHTML("beforeend", divCajas);
 
